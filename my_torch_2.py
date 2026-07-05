@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # 1. 准备数据
 torch.manual_seed(42)
-X = torch.randn(100, 3)  # 100 个样本，2 个特征
+X = torch.randn(100, 3)  # 100 个样本，3个特征
 true_w = torch.tensor([2.0, 3.0, 4.0])
 true_b = 5.0
 Y = X @ true_w + true_b + torch.randn(100) * 0.1
@@ -24,8 +24,12 @@ class LinearRegressionModel(nn.Module):
 model = LinearRegressionModel()
 
 # 3. 定义损失函数和优化器
+# 损失函数（均方误差）
 criterion = nn.MSELoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+# 优化器（使用 SGD 或 Adam） SGD:使用随机梯度下降法更新参数，学习率控制每步更新的幅度
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01)  # 学习率设置为0.01
+# 也可以使用 Adam 优化器     Adam:自适应学习率优化器，通常收敛更快
+# optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
 
 # 4. 训练模型
 num_epochs = 5000

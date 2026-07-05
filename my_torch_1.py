@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.optim as optim
 import matplotlib.pyplot as plt
 
-n_samples = 100
+n_samples = 300
 data = torch.randn(n_samples, 2)
 # 这行代码的目的是为每个生成的二维数据点生成一个标签，用于表示该点是否位于单位圆内。点在圆内为1，圆外为0。
 labels = (data[:, 0]**2 + data[:, 1]**2 < 1).float().unsqueeze(1)
