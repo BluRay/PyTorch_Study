@@ -1,4 +1,7 @@
 # https://www.cnblogs.com/bohengwebb/p/18718114
+# Docker 测试Pytorch
+# docker pull pytorch/pytorch
+# docker run -it -v /Users/nuc/WORK/pytorch_env/data:/workspace pytorch/pytorch bash
 import torch
 import torch.nn as nn
 import torch.optim as optim
